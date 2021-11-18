@@ -1,0 +1,26 @@
+{
+  "name": "Just-Tech-News",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LunaZ13/Just-Tech-News.git"
+  },
+  "keywords": [],
+  "author": "Inmar Luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LunaZ13/Just-Tech-News/issues"
+  },
+  "homepage": "https://github.com/LunaZ13/Just-Tech-News#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.9.0"
+  }
+}
