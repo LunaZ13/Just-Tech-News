@@ -17,4 +17,4 @@ module.exports = {
             .split('/')[0]
             .split('?')[0];
     }
-}
+};

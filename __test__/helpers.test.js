@@ -1,5 +1,6 @@
+// const { expect } = require('@jest/globals');
 const { expect } = require('@jest/globals');
-const {format_date} = require('../utils/helpers');
+const {format_date, format_url, format_plural} = require('../utils/helpers');
 
 test('format_date() returns a date string', () => {
     const date = new Date('2020-03-20 16:12:03');
@@ -7,9 +8,13 @@ test('format_date() returns a date string', () => {
     expect(format_date(date)).toBe('3/20/2020');
 });
 
-// test('format_plural() correctly pluralizes words', () => {
-//     const 
-// })
+test('format_plural() correctly pluralizes words', () => {
+    const word1 = format_plural('tiger', 1);
+    const word2 = format_plural('lion', 2);
+
+    expect(word1).toBe('tiger');
+    expect(word2).toBe('lions');
+});
 
 test('format_url() returns a simplified url string', () => {
     const url1 = format_url('http://test.com/page/1');
