@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
+
+  console.log('CREATING COMMENT!!')
   // check the session
   if (req.session) {
     Comment.create({

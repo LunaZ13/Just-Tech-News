@@ -4,6 +4,21 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // get all users
+
+router.post('/', withAuth, (req, res) => {
+    console.log('WE ARE CREATING A POST!!')
+    Post.create({
+        title: req.body.title,
+        post_url: req.body.post_url,
+        user_id: req.session.user_id
+    })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 router.get('/', (req, res) => {
     console.log('=============================');
     Post.findAll({
@@ -78,18 +93,7 @@ router.get('/:id'), (req, res) => {
     });
 };
 
-router.post('/'), withAuth, (req, res) => {
-    Post.create({
-        title: req.body.title,
-        post_url: req.body/post_url,
-        user_id: req.session.user_id
-    })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-};
+
 
 router.put('/upvote', withAuth, (req, res) => {
     // make sure the session exists first

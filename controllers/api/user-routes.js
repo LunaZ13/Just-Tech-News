@@ -57,7 +57,8 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/users/1
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
+    console.log('WE CREATED USER!!!')
     // expects  { username: email: password: }
     User.create({
         username: req.body.username,
